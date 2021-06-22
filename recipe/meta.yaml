@@ -1,5 +1,5 @@
 {% set name = "mongogrant" %}
-{% set version = "0.3.1" %}
+{% set version = "0.3.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/mongogrant-{{ version }}.tar.gz
-  sha256: 2683133bb921830f71b1e0064b294491d3388095c76085028fcae0b6f3327322
+  sha256: 1d4f83729933c9951cdb7cb8ae40a93bab13d59afe04df69c25c9a322188d866
   patches:
     - expanduser.patch
 
@@ -43,7 +43,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'grant username and password credentials for roles on mongo databases via email verification'
+  summary: grant username and password credentials for roles on mongo databases via email verification
   description: |
     So, your friendly neighborhood mongogranter says you know have access
     to a database through your email address. 
