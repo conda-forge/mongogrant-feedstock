@@ -8,8 +8,6 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/mongogrant-{{ version }}.tar.gz
   sha256: 1d4f83729933c9951cdb7cb8ae40a93bab13d59afe04df69c25c9a322188d866
-  patches:
-    - expanduser.patch
 
 build:
   noarch: python
