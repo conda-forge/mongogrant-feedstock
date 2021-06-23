@@ -1,5 +1,5 @@
 {% set name = "mongogrant" %}
-{% set version = "0.3.2" %}
+{% set version = "0.3.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/mongogrant-{{ version }}.tar.gz
-  sha256: 1d4f83729933c9951cdb7cb8ae40a93bab13d59afe04df69c25c9a322188d866
+  sha256: ad494b8638adfa840cdd5568af44448dd43771b58102550cf7c61402b1620ab4
 
 build:
   noarch: python
