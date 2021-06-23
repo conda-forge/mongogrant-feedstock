@@ -21,12 +21,12 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python >=3.6
   run:
     - click
     - flask >=1.0
     - pymongo >=3.8
-    - python
+    - python >=3.6
     - requests
 
 test:
