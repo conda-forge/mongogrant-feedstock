@@ -1,0 +1,58 @@
+schema_version: 1
+
+context:
+  name: mongogrant
+  version: "0.3.3"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/mongogrant-${{ version }}.tar.gz
+  sha256: ad494b8638adfa840cdd5568af44448dd43771b58102550cf7c61402b1620ab4
+
+build:
+  number: 2
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - mgrant = mongogrant.scripts.mgrant:cli
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}
+    - setuptools
+  run:
+    - click
+    - flask >=1.0
+    - pymongo >=3.8
+    - python >=${{ python_min }}
+    - requests
+
+tests:
+  - python:
+      imports:
+        - mongogrant
+        - mongogrant.scripts
+      pip_check: true
+      python_version:
+        - ${{ python_min }}
+        - "*"
+
+about:
+  license: BSD-3-Clause
+  license_file: LICENSE
+  summary: grant username and password credentials for roles on mongo databases via email verification
+  description: |
+    So, your friendly neighborhood mongogranter says you know have access
+    to a database through your email address.
+  homepage: https://github.com/materialsproject/mongogrant/
+  repository: https://github.com/materialsproject/mongogrant/
+  documentation: https://github.com/materialsproject/mongogrant/
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
